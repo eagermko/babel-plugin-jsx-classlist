@@ -25,6 +25,8 @@ export default ({ types }: typeof babel): PluginObj => {
           shouldInject = false;
         },
         exit(program) {
+          if (!shouldInject) return;
+
           const identifier = types.identifier('__clx');
           const importDefaultSpecifier =
             types.importDefaultSpecifier(identifier);
