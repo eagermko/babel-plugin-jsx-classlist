@@ -44,6 +44,20 @@ export default defineConfig({
 
 # Example
 
+```diff
+- import classnames from 'classnames';
+
+function Component(props: { focus: boolean }) {
+  const { focus } = props;
+  return (
+-    <div className={classnames("static", { 'bg-red-100': focus })}>
++    <div className="static" classList={{ 'bg-red-100': focus }}>
+      Hello
+    <div>
+  );
+}
+```
+
 ```tsx
 <div className="foo" classList="bar">
 // 🔃
